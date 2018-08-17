@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<style>
+
+.w3-tangerine 
+{
+    font-family: "Tangerine", serif;
+}
+</style>
+</head>
+<body>
+
+<div class="container" ng-controller="BlogController">
+
+<div class="w3-tangerine">
+<table class="table table">
+
+<tr class="w3-xxlarge">
+   <td> Blog Name</td>
+   <td> Blog content</td>
+</tr>
+
+<tr>
+   <tr class="w3-xxlarge" ng-repeat="blog in allBlogdata">
+      <td>{{blog.blogName}}</td>
+      <td>{{blog.blogContent}}</td>
+</tr>
+</table>
+
+<div class="panel-group" id="accordion">
+   <div class="panel panel-default">
+     <div class="panel-heading" ng-repeat="blog in allBlogdata">
+        <h4 class="panel-title">{{blog.likes}}&nbsp;<button type="button" class="btn btn-default btn-sm" ng-click="incrementLike(blog.blogId)"> <span class="glyphicon glyphicon-thumbs-up"></span></button> 
+           <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">{{blog.blogName}}</a>
+        </h4>
+     </div>   
+        <div id="collapse1" class="panel-collapse collapse in">
+           <div class="panel-body">
+           {{blog.blogContent}}
+           </div>
+        </div>
+   </div>
+</div>
+</div>          
+</div>
+</body>
+</html>

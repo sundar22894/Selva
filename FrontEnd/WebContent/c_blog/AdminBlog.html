@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<style>
+
+.w3-tangerine 
+{
+    font-family: "Tangerine", serif;
+}
+</style>
+</head>
+<body>
+
+<div ng-controller="BlogController">
+<div class="w3-tangerine">
+<table class="table table">
+  
+   <tr class="w3-xxlarge">
+      <td>Blog Name</td>
+      <td>Blog Content</td>
+      <td colspan="2">Operation</td>
+   </tr>
+   
+   <tr class="w3-xlarge" ng-repeat="blog in allBlogdata">
+      <td>{{blog.blogName}}</td>
+      <td>{{blog.blogContent}}</td>
+      <td ng-hide="blog.status=='A'">
+          <input type="button" value="Approve" ng-click="approve(blog.blogId)" class="btn btn-info">
+      </td>    
+      <td ng-hide="blog.status=='p'">
+           <input type="button" value="Reject" ng-click="reject(blog.blogId)" class="btn btn-danger">
+      </td>
+      
+   </tr>        
+   
+</table>   
+</div>
+</div>
+</body>
+</html>

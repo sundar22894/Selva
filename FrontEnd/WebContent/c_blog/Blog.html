@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<style>
+.w3-tangerine 
+{
+    font-family: "Tangerine", serif;
+}
+.background
+{
+   height: 670px;
+   width:100%;
+   background-image: url("https://pepperstormmedia.com/wp-content/uploads/2017/08/blog-793047_960_720.jpg");
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+
+</style>
+</head>
+<body>
+
+<div ng-controller="BlogController">
+<div class="background">
+<div class="w3-container w3-tangerine">
+  <center><p class="w3-jumbo">Add Blog</p></center>
+  
+  <form class="form-horizontal">
+  
+  <div class="w3-xxlarge">
+     <div class="form-group">
+       <label class="control-label col-sm-2">Blog Name:</label>
+         <div class="col-sm-10">
+           <input type="text" class="form-control" name="blogName" ng-model="blog.blogName" placeholder="blog Name">
+         </div>
+    </div>
+
+     <div class="form-group">
+       <label class="control-label col-sm-2">blog Content:</label>
+         <div class="col-sm-10">
+            <input type="text" class="form-control" name="blogContent" ng-model="blog.blogContent" placeholder="blog content">         
+      </div>
+    
+     
+     <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="button" ng-click="addBlog()" class="btn btn-lg btn-info">Add Blog</button>
+      </div>
+    </div>
+</div>     
+  
+</form>
+
+</div>
+</div>
+</body>
+</html>

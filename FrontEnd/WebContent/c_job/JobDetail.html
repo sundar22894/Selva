@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  
+  
+  
+<style>
+.w3-tangerine 
+{
+    font-family: "Tangerine", serif;
+}
+
+</style>
+</head>
+
+<body>
+
+<div ng-controller="JobController">
+
+<div class="w3-tangerine">
+
+<table class="table table">
+
+ 
+<tr class="w3-xxlarge">
+ <th>Designation</th>
+ <th>Company</th>
+ <th>Salary</th>
+ <th>Location</th>
+ <th>Last Date Apply</th>
+ <th ng-show="currentUser.role=='ROLE_ADMIN'||currentUser.role=='ROLE_USER'">Operation</th>
+</tr>
+
+
+<tr class="w3-xxlarge" ng-repeat="job in allJobData">
+<td>{{job.jobDesignation}}</td>
+<td>{{job.company}}</td>
+<td>{{job.salary}}</td>
+<td>{{job.location}}</td>
+<td>{{job.lastDateApply}}</td>
+
+<td>
+<input ng-show="currentUser.role=='ROLE_USER'" type="button" ng-click="applyJob()" value="Apply" class="btn btn-info">
+<input ng-show="currentUser.role=='ROLE_ADMIN'" type="button" ng-click="deleteJob()" value="Delete" class="btn btn-danger">
+</td>
+</tr>
+
+</table>
+</div>
+</div>
+
+
+</body>
+</html>

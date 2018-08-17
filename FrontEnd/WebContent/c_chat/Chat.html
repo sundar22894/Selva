@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+
+<style>
+.w3-tangerine 
+{
+    font-family: "Tangerine", serif;
+}
+</style>
+</head>
+<body>
+<div class="container" ng-controller="ChatController">
+<<div class="w3-tangerine">
+	<form ng-submit="addMessage()" name="chatMsg">
+	<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-9 form-group">
+								<label>Message</label>
+								<input type="text" placeholder="Enter Chat Text" ng-model="message" class="form-control">
+							</div>
+							<div class="col-sm-3 form-group">
+								<span class="count" ng-bind="max - message.length">140</span>
+								<button ng-disabled="message.length>140||message.length==0">Send</button>
+							</div>
+						</div>
+	</div>
+	</form>
+	
+	<div class="col-sm-12">
+		<p ng-repeat="message in messages">
+			<span><img src="http://localhost:8080/Middleware/getImage/{{currentUser.loginname}}" width="20" height=20"/>{{message.message}}</span>
+		</p>
+	</div>
+	
+</div>
+</div>
+</body>
+</html>
